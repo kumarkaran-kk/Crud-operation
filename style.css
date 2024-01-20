@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* CSS styles for the pop-up message */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      color: #fff;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup.active {
+      display: flex;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .popup .message {
+      margin-bottom: 10px;
+    }
+
+    .popup .message a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: radial-gradient(circle, rgb(177, 220, 108) 6%, rgba(255, 49, 135, 0.99) 100%);
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+   background: linear-gradient(135deg, #066e52, #3a2f81);
+  /* background-color: linear-gradient(135deg, #066e52, #3a2f81); */
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+
+.gender-details {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+/* Style for the selected option */
+select:focus {
+  border-color: #555;
+}
+
+form .input-box.upload {
+  margin-top: 20px;
+}
+
+form .button {
+  margin-top: 30px;
+}
+
+form .button input {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+/* Fetch Form */
+form#fetchForm {
+  margin-top: 30px;
+}
+
+form#fetchForm .input-box {
+  margin-bottom: 20px;
+}
+
+form#fetchForm .details {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form#fetchForm input[type="email"] {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+
+form#fetchForm input[type="email"]:focus,
+form#fetchForm input[type="email"]:valid {
+  border-color: #9b59b6;
+}
+
+form#fetchForm .button {
+  text-align: center;
+}
+
+form#fetchForm button[type="submit"] {
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #9b59b6;
+}
+
+form#fetchForm button[type="submit"]:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background-color: #71b7e6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 1px;
+    /* Adjust the padding to your preference */
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-details .input-box,
+  .gender-details {
+    width: 100%;
+  }
+
+  .button input,
+  form#fetch button[type="submit"] {
+    width: 100%;
+  }
+}
